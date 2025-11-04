@@ -1,0 +1,89 @@
+{
+  // Настройки редактора для проекта 1С
+
+  // Основные настройки
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "editor.formatOnSave": true,
+  "editor.trimAutoWhitespace": true,
+
+  // Форматирование при сохранении
+  "editor.codeActionsOnSave": {
+    "source.trimTrailingWhitespace": "explicit",
+    "source.fixAll": "explicit"
+},
+
+  // Настройки файлов
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "files.encoding": "utf8",
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+
+  // Настройки для файлов 1С (BSL)
+  "[bsl]": {
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.wordWrap": "off",
+    "editor.rulers": [120]
+  },
+
+  "[os]": {
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.wordWrap": "off",
+    "editor.rulers": [120]
+  },
+
+  // Настройки для XML (конфигурация 1С)
+  "[xml]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true
+  },
+
+  // Настройки поиска
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/build": true,
+    "**/.git": true
+  },
+
+  // Настройки файлового проводника
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true
+  },
+
+  // Настройки для работы с 1С
+  "files.associations": {
+    "*.bsl": "bsl",
+    "*.os": "os"
+  },
+
+  // Настройки терминала
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+
+  // Настройки мини-карты
+  "editor.minimap.enabled": true,
+
+  // Настройки нумерации строк
+  "editor.lineNumbers": "on",
+
+  // Настройки подсветки
+  "editor.renderWhitespace": "boundary",
+  "editor.renderControlCharacters": false,
+
+  // Настройки автодополнения
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  },
+
+  // Максимальная длина строки
+  "editor.rulers": [120]
+}
+

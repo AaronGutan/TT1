@@ -1,0 +1,35 @@
+# Зависимости
+node_modules
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Сборка
+dist
+build
+.next
+out
+.nuxt
+.cache
+
+# Логи
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Окружение
+.env
+.env.local
+.env.*.local
+
+# Кэш
+.cache
+.parcel-cache
+
+# Другие
+.DS_Store
+*.pem
+coverage
+.nyc_output
+

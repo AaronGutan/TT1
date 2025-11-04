@@ -1,0 +1,31 @@
+# EditorConfig для проекта 1С:Предприятие
+# https://editorconfig.org
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Файлы модулей 1С
+[*.{bsl,os}]
+indent_style = space
+indent_size = 4
+max_line_length = 120
+
+# Текстовые файлы
+[*.txt]
+indent_style = space
+indent_size = 2
+
+# XML файлы (конфигурация 1С)
+[*.xml]
+indent_style = space
+indent_size = 2
+
+# Markdown файлы
+[*.md]
+trim_trailing_whitespace = false
+indent_size = 2
