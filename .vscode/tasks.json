@@ -1,0 +1,32 @@
+
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "echo",
+            "type": "shell",
+            "command": "echo Hello"
+        },
+        {
+            "label": "1C:EDT - Сборка через CLI (универсальная, имя из папки)",
+            "type": "shell",
+            "command": "1cedt-cli",
+            "args": [
+                "build",
+                "--yes",
+                "${workspaceFolderBasename}"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "focus": false,
+                "clear": true
+            },
+            "problemMatcher": []
+        }
+        
+    ]
+}
