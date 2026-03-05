@@ -29,7 +29,7 @@ allowed-tools:
 
 | Переменная | Описание                              | Пример                                        |
 |------------|---------------------------------------|-----------------------------------------------|
-| V8_PATH    | Каталог bin платформы 1С              | `C:\Program Files\1cv8\8.3.25.1257\bin`       |
+| V8_PATH    | Каталог bin платформы 1С              | `C:\Program Files\1cv8\8.3.27.1936\bin`       |
 | V8_BASE    | Путь к пустой файловой ИБ            | `.\base`                                      |
 
 ## Команды
@@ -72,7 +72,7 @@ $v8 = Get-ChildItem "C:\Program Files\1cv8\*\bin\1cv8.exe" | Sort-Object -Descen
 ## Пример полного цикла
 
 ```powershell
-$env:V8_PATH = "C:\Program Files\1cv8\8.3.25.1257\bin"
+$env:V8_PATH = "C:\Program Files\1cv8\8.3.27.1936\bin"
 $env:V8_BASE = ".\base"
 
 # Создать ИБ
