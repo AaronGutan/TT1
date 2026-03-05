@@ -4,10 +4,13 @@ Thumbs.db
 *.swp
 *.swo
 *~
-*.cfe
+*.dt
+*.cf
 *.epf
 *.erf
-
+*.cfe
+*.cfu
+*.ert
 
 # Игнорируем временные файлы
 *.tmp
