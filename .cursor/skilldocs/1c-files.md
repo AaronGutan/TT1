@@ -200,10 +200,8 @@ Destination=1C\DemoTrade
 #### *.v8i — Список информационных баз
 **Назначение:** Файл со списком информационных баз для автоматического добавления в список пользователя.
 
-**Расположение по умолчанию:**
-- **Windows:** `%APPDATA%\1C\1CEStart\ibases.v8i`
-- **Linux:** `~/.1C/1cestart/ibases.v8i`
-- **macOS:** `~/.1C/1cestart/ibases.v8i`
+**Расположение по умолчанию (Windows):**
+- `%APPDATA%\1C\1CEStart\ibases.v8i`
 
 **Формат:** INI-файл в кодировке UTF-8
 
