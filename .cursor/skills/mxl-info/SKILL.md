@@ -1,6 +1,6 @@
----
+﻿---
 name: mxl-info
-description: Анализ структуры макета табличного документа (MXL) — области, параметры, наборы колонок
+description: Анализ структуры макета табличного документа (MXL) — области, параметры, наборы колонок. Используй при разработке печати — получить области и заполняемые параметры макета
 argument-hint: <TemplatePath> или <ProcessorName> <TemplateName>
 allowed-tools:
   - Bash
@@ -38,12 +38,12 @@ allowed-tools:
 ## Команда
 
 ```powershell
-powershell.exe -NoProfile -File .cursor/rules/skills/mxl-info/scripts/mxl-info.ps1 -TemplatePath "<путь>"
+powershell.exe -NoProfile -File .cursor/skills/mxl-info/scripts/mxl-info.ps1 -TemplatePath "<путь>"
 ```
 
 Или по имени обработки/макета:
 ```powershell
-powershell.exe -NoProfile -File .cursor/rules/skills/mxl-info/scripts/mxl-info.ps1 -ProcessorName "<Имя>" -TemplateName "<Макет>" [-SrcDir "<каталог>"]
+powershell.exe -NoProfile -File .cursor/skills/mxl-info/scripts/mxl-info.ps1 -ProcessorName "<Имя>" -TemplateName "<Макет>" [-SrcDir "<каталог>"]
 ```
 
 Дополнительные флаги:

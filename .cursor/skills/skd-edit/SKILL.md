@@ -1,6 +1,6 @@
----
+﻿---
 name: skd-edit
-description: Точечное редактирование схемы компоновки данных 1С (СКД) — добавление/удаление полей, итогов, фильтров, параметров, вычисляемых полей
+description: Точечное редактирование схемы компоновки данных 1С (СКД). Используй когда нужно модифицировать существующую СКД — добавить поля, итоги, фильтры, параметры, изменить текст запроса
 argument-hint: <TemplatePath> -Operation <op> -Value <value>
 allowed-tools:
   - Bash
@@ -25,7 +25,7 @@ allowed-tools:
 | `NoSelection` | (опц.) Не добавлять поле в selection варианта |
 
 ```powershell
-powershell.exe -NoProfile -File .cursor/rules/skills/skd-edit/scripts/skd-edit.ps1 -TemplatePath "<path>" -Operation <op> -Value "<value>"
+powershell.exe -NoProfile -File .cursor/skills/skd-edit/scripts/skd-edit.ps1 -TemplatePath "<path>" -Operation <op> -Value "<value>"
 ```
 
 ## Пакетный режим (batch)

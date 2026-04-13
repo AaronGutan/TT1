@@ -1,6 +1,6 @@
----
+﻿---
 name: mxl-compile
-description: Компиляция табличного документа (MXL) из JSON-определения
+description: Компиляция табличного документа (MXL) из JSON-определения. Используй когда нужно создать макет печатной формы
 argument-hint: <JsonPath> <OutputPath>
 allowed-tools:
   - Bash
@@ -29,7 +29,7 @@ allowed-tools:
 ## Команда
 
 ```powershell
-powershell.exe -NoProfile -File .cursor/rules/skills/mxl-compile/scripts/mxl-compile.ps1 -JsonPath "<путь>.json" -OutputPath "<путь>/Template.xml"
+powershell.exe -NoProfile -File .cursor/skills/mxl-compile/scripts/mxl-compile.ps1 -JsonPath "<путь>.json" -OutputPath "<путь>/Template.xml"
 ```
 
 ## Рабочий процесс

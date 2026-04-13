@@ -1,6 +1,6 @@
----
+﻿---
 name: mxl-decompile
-description: Декомпиляция табличного документа (MXL) в JSON-определение
+description: Декомпиляция табличного документа (MXL) в JSON-определение. Используй когда нужно получить редактируемое описание существующего макета
 argument-hint: <TemplatePath> [OutputPath]
 allowed-tools:
   - Bash
@@ -29,7 +29,7 @@ allowed-tools:
 ## Команда
 
 ```powershell
-powershell.exe -NoProfile -File .cursor/rules/skills/mxl-decompile/scripts/mxl-decompile.ps1 -TemplatePath "<путь>/Template.xml" [-OutputPath "<путь>.json"]
+powershell.exe -NoProfile -File .cursor/skills/mxl-decompile/scripts/mxl-decompile.ps1 -TemplatePath "<путь>/Template.xml" [-OutputPath "<путь>.json"]
 ```
 
 ## Рабочий процесс

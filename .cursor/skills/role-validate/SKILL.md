@@ -1,6 +1,6 @@
----
+﻿---
 name: role-validate
-description: Валидация структурной корректности роли 1С (Rights.xml) — формат, права, RLS, шаблоны
+description: Валидация роли 1С. Используй после создания или модификации роли для проверки корректности
 argument-hint: <RightsPath>
 allowed-tools:
   - Bash
@@ -20,7 +20,7 @@ allowed-tools:
 ## Запуск скрипта
 
 ```powershell
-powershell.exe -NoProfile -File .cursor/rules/skills/role-validate/scripts/role-validate.ps1 -RightsPath <path> [-MetadataPath <path>] [-OutFile <output.txt>]
+powershell.exe -NoProfile -File .cursor/skills/role-validate/scripts/role-validate.ps1 -RightsPath <path> [-MetadataPath <path>] [-OutFile <output.txt>]
 ```
 
 ### Параметры

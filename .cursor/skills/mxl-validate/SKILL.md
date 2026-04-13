@@ -1,6 +1,6 @@
----
+﻿---
 name: mxl-validate
-description: Валидация структурной корректности макета табличного документа (MXL)
+description: Валидация макета табличного документа (MXL). Используй после создания или модификации макета для проверки корректности
 argument-hint: <TemplatePath> или <ProcessorName> <TemplateName>
 allowed-tools:
   - Bash
@@ -34,12 +34,12 @@ allowed-tools:
 ## Команда
 
 ```powershell
-powershell.exe -NoProfile -File .cursor/rules/skills/mxl-validate/scripts/mxl-validate.ps1 -TemplatePath "<путь>"
+powershell.exe -NoProfile -File .cursor/skills/mxl-validate/scripts/mxl-validate.ps1 -TemplatePath "<путь>"
 ```
 
 Или по имени обработки/макета:
 ```powershell
-powershell.exe -NoProfile -File .cursor/rules/skills/mxl-validate/scripts/mxl-validate.ps1 -ProcessorName "<Имя>" -TemplateName "<Макет>" [-SrcDir "<каталог>"]
+powershell.exe -NoProfile -File .cursor/skills/mxl-validate/scripts/mxl-validate.ps1 -ProcessorName "<Имя>" -TemplateName "<Макет>" [-SrcDir "<каталог>"]
 ```
 
 ## Выполняемые проверки

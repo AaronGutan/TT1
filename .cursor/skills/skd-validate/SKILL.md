@@ -1,6 +1,6 @@
----
+﻿---
 name: skd-validate
-description: Валидация структурной корректности схемы компоновки данных 1С (СКД) — Template.xml
+description: Валидация схемы компоновки данных 1С (СКД). Используй после создания или модификации СКД для проверки корректности
 argument-hint: <TemplatePath> [-MaxErrors 20]
 allowed-tools:
   - Bash
@@ -21,7 +21,7 @@ allowed-tools:
 | `OutFile` | Записать результат в файл |
 
 ```powershell
-powershell.exe -NoProfile -File .cursor/rules/skills/skd-validate/scripts/skd-validate.ps1 -TemplatePath "<путь>"
+powershell.exe -NoProfile -File .cursor/skills/skd-validate/scripts/skd-validate.ps1 -TemplatePath "<путь>"
 ```
 
 ## Проверки (~30)

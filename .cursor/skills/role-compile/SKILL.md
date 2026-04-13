@@ -1,6 +1,6 @@
----
+﻿---
 name: role-compile
-description: Создание роли 1С — метаданные и Rights.xml из описания прав
+description: Создание роли 1С из описания прав. Используй когда нужно создать новую роль с набором прав на объекты
 argument-hint: <JsonPath> <RolesDir>
 allowed-tools:
   - Bash
@@ -21,7 +21,7 @@ allowed-tools:
 | `RolesDir` | Каталог `Roles/` в исходниках конфигурации |
 
 ```powershell
-powershell.exe -NoProfile -File .cursor/rules/skills/role-compile/scripts/role-compile.ps1 -JsonPath "<json>" -OutputDir "<RolesDir>"
+powershell.exe -NoProfile -File .cursor/skills/role-compile/scripts/role-compile.ps1 -JsonPath "<json>" -OutputDir "<RolesDir>"
 ```
 
 `<Role>ИмяРоли</Role>` автоматически добавляется в `<ChildObjects>` файла `Configuration.xml` (ожидается в parent от `RolesDir`).

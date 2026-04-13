@@ -1,6 +1,6 @@
----
+﻿---
 name: form-validate
-description: Валидация структурной корректности управляемой формы 1С (Form.xml)
+description: Валидация управляемой формы 1С. Используй после создания или модификации формы для проверки корректности
 argument-hint: <FormPath>
 allowed-tools:
   - Bash
@@ -28,7 +28,7 @@ allowed-tools:
 ## Команда
 
 ```powershell
-powershell.exe -NoProfile -File .cursor/rules/skills/form-validate/scripts/form-validate.ps1 -FormPath "<путь>"
+powershell.exe -NoProfile -File .cursor/skills/form-validate/scripts/form-validate.ps1 -FormPath "<путь>"
 ```
 
 ## Выполняемые проверки
@@ -46,6 +46,10 @@ powershell.exe -NoProfile -File .cursor/rules/skills/form-validate/scripts/form-
 | 9 | События имеют непустые имена обработчиков | ERROR |
 | 10 | Команды имеют Action (обработчик) | ERROR |
 | 11 | Не более одного MainAttribute | ERROR |
+| 12 | BaseForm: наличие и version (при расширении) | OK / WARN |
+| 13 | callType значения: Before, After, Override | ERROR |
+| 14 | ID расширения >= 1000000 для добавленных attrs/commands | WARN |
+| 15 | callType без BaseForm — некорректная структура | WARN |
 
 ## Вывод
 
@@ -71,8 +75,18 @@ All checks passed.
 
 Код возврата: 0 = все проверки пройдены, 1 = есть ошибки.
 
+### Расширения
+
+При обнаружении `<BaseForm>` автоматически активируются дополнительные проверки:
+- Валидность значений `callType` (Before/After/Override)
+- ID расширения >= 1000000 для добавленных атрибутов и команд
+- Наличие version на `<BaseForm>`
+
+Формы без `<BaseForm>` проверяются только стандартными проверками.
+
 ## Когда использовать
 
 - **После `/form-compile`**: проверить корректность сгенерированной формы
+- **После `/form-edit`**: проверить добавленные элементы, особенно в extension-формах
 - **После ручного редактирования Form.xml**: убедиться что ID уникальны, companions на месте, ссылки валидны
 - **При отладке**: выявить ошибки в структуре формы до сборки EPF

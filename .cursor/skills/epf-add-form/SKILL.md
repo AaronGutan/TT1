@@ -1,4 +1,4 @@
----
+﻿---
 name: epf-add-form
 description: Добавить управляемую форму к внешней обработке 1С
 argument-hint: <ProcessorName> <FormName> [Synonym]
@@ -32,7 +32,7 @@ allowed-tools:
 ## Команда
 
 ```powershell
-pwsh -NoProfile -File .cursor/rules/skills/epf-add-form/scripts/add-form.ps1 -ProcessorName "<ProcessorName>" -FormName "<FormName>" [-Synonym "<Synonym>"] [-Main] [-SrcDir "<SrcDir>"]
+powershell.exe -NoProfile -File .cursor/skills/epf-add-form/scripts/add-form.ps1 -ProcessorName "<ProcessorName>" -FormName "<FormName>" [-Synonym "<Synonym>"] [-Main] [-SrcDir "<SrcDir>"]
 ```
 
 ## Что создаётся

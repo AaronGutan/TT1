@@ -1,4 +1,4 @@
----
+﻿---
 name: epf-init
 description: Создать пустую внешнюю обработку 1С (scaffold XML-исходников)
 argument-hint: <Name> [Synonym]
@@ -30,7 +30,7 @@ allowed-tools:
 ## Команда
 
 ```powershell
-pwsh -NoProfile -File .cursor/rules/skills/epf-init/scripts/init.ps1 -Name "<Name>" [-Synonym "<Synonym>"] [-SrcDir "<SrcDir>"]
+powershell.exe -NoProfile -File .cursor/skills/epf-init/scripts/init.ps1 -Name "<Name>" [-Synonym "<Synonym>"] [-SrcDir "<SrcDir>"]
 ```
 
 ## Что создаётся
@@ -50,5 +50,6 @@ pwsh -NoProfile -File .cursor/rules/skills/epf-init/scripts/init.ps1 -Name "<Nam
 ## Дальнейшие шаги
 
 - Добавить форму: `/epf-add-form`
-- Добавить макет: `/epf-add-template`
+- Добавить макет: `/template-add`
+- Добавить справку: `/help-add`
 - Собрать EPF: `/epf-build`

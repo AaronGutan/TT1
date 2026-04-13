@@ -1,6 +1,6 @@
----
+﻿---
 name: role-info
-description: Компактная сводка прав роли 1С из Rights.xml — объекты, права, RLS, шаблоны ограничений
+description: Компактная сводка прав роли 1С из Rights.xml — объекты, права, RLS, шаблоны ограничений. Используй для аудита прав — какие объекты и действия доступны, ограничения RLS
 argument-hint: <RightsPath>
 allowed-tools:
   - Bash
@@ -22,7 +22,7 @@ allowed-tools:
 ## Запуск скрипта
 
 ```powershell
-powershell.exe -File .cursor/rules/skills/role-info/scripts/role-info.ps1 -RightsPath <path> -OutFile <output.txt>
+powershell.exe -NoProfile -File .cursor/skills/role-info/scripts/role-info.ps1 -RightsPath <path> -OutFile <output.txt>
 ```
 
 ### Параметры

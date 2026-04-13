@@ -1,4 +1,4 @@
----
+﻿---
 name: img-grid
 description: Наложить пронумерованную сетку на изображение для определения пропорций колонок
 argument-hint: <ImagePath> [-c COLS]
@@ -29,7 +29,7 @@ allowed-tools:
 ## Команда
 
 ```bash
-python .cursor/rules/skills/img-grid/scripts/overlay-grid.py "<ImagePath>" [-c 50] [-o "<OutputPath>"]
+python .cursor/skills/img-grid/scripts/overlay-grid.py "<ImagePath>" [-c 50] [-o "<OutputPath>"]
 ```
 
 Требуется Python 3 с библиотекой Pillow (`pip install Pillow`).
