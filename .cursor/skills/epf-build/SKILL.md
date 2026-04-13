@@ -1,6 +1,6 @@
----
+﻿---
 name: epf-build
-description: Собрать внешнюю обработку 1С (EPF) из XML-исходников
+description: Собрать внешнюю обработку 1С (EPF/ERF) из XML-исходников
 argument-hint: <ProcessorName>
 allowed-tools:
   - Bash
@@ -11,7 +11,7 @@ allowed-tools:
 
 # /epf-build — Сборка обработки
 
-Собирает EPF-файл из XML-исходников с помощью платформы 1С.
+Собирает EPF-файл из XML-исходников с помощью платформы 1С. Та же команда CLI работает и для внешних отчётов (ERF) — см. `/erf-build`.
 
 ## Usage
 
@@ -25,26 +25,37 @@ allowed-tools:
 | SrcDir        | нет          | `src`        | Каталог исходников                   |
 | OutDir        | нет          | `build`      | Каталог для результата               |
 
-## Переменные окружения
+## Параметры подключения
 
-| Переменная | Описание                              | Пример                                        |
-|------------|---------------------------------------|-----------------------------------------------|
-| V8_PATH    | Каталог bin платформы 1С              | `C:\Program Files\1cv8\8.3.27.1936\bin`       |
-| V8_BASE    | Путь к пустой файловой ИБ            | `.\base`                                      |
+Прочитай `.v8-project.json` из корня проекта. Возьми `v8path` (путь к платформе) и разреши базу для сборки:
+1. Если пользователь указал параметры подключения (путь, сервер) — используй напрямую
+2. Если указал базу по имени — ищи по id / alias / name в `.v8-project.json`
+3. Если не указал — сопоставь текущую ветку Git с `databases[].branches`
+4. Если ветка не совпала — используй `default`
+5. Если `.v8-project.json` нет или баз нет — создай пустую ИБ в `./base`
+Если `v8path` не задан — автоопределение: `Get-ChildItem "C:\Program Files\1cv8\*\bin\1cv8.exe" | Sort -Desc | Select -First 1`
+Если использованная база не зарегистрирована — после выполнения предложи добавить через `/db-list add`.
 
-## Команды
+## Команда
 
-### 1. Создать пустую ИБ (если нет)
-
-```cmd
-"%V8_PATH%\1cv8.exe" CREATEINFOBASE File="%V8_BASE%"
+```powershell
+powershell.exe -NoProfile -File .cursor/skills/epf-build/scripts/epf-build.ps1 <параметры>
 ```
 
-### 2. Сборка EPF из XML
+### Параметры скрипта
 
-```cmd
-"%V8_PATH%\1cv8.exe" DESIGNER /F "%V8_BASE%" /DisableStartupDialogs /LoadExternalDataProcessorOrReportFromFiles "<SrcDir>\<ProcessorName>.xml" "<OutDir>\<ProcessorName>.epf" /Out "<OutDir>\build.log"
-```
+| Параметр | Обязательный | Описание |
+|----------|:------------:|----------|
+| `-V8Path <путь>` | нет | Каталог bin платформы (или полный путь к 1cv8.exe) |
+| `-InfoBasePath <путь>` | * | Файловая база |
+| `-InfoBaseServer <сервер>` | * | Сервер 1С (для серверной базы) |
+| `-InfoBaseRef <имя>` | * | Имя базы на сервере |
+| `-UserName <имя>` | нет | Имя пользователя |
+| `-Password <пароль>` | нет | Пароль |
+| `-SourceFile <путь>` | да | Путь к корневому XML-файлу исходников |
+| `-OutputFile <путь>` | да | Путь к выходному EPF/ERF-файлу |
+
+> `*` — нужен либо `-InfoBasePath`, либо пара `-InfoBaseServer` + `-InfoBaseRef`
 
 ## Коды возврата
 
@@ -53,31 +64,16 @@ allowed-tools:
 | 0   | Успешная сборка             |
 | 1   | Ошибка (см. лог)           |
 
-## Автоопределение платформы (Windows)
+## Ссылочные типы
 
-Если `V8_PATH` не задан, можно найти автоматически:
+Если обработка использует ссылочные типы конфигурации (`CatalogRef.XXX`, `DocumentRef.XXX`) — сборка в пустой базе упадёт с ошибкой XDTO. Зарегистрируй базу с целевой конфигурацией через `/db-list add`.
 
-```powershell
-$v8 = Get-ChildItem "C:\Program Files\1cv8\*\bin\1cv8.exe" | Sort-Object -Descending | Select-Object -First 1
-```
-
-## Ссылочные типы и выбор базы
-
-Пустая ИБ (`V8_BASE`) подходит для сборки, если формы используют только базовые типы (`xs:string`, `xs:boolean` и т.д.) или тип самой обработки (`ExternalDataProcessorObject.Имя`).
-
-Если обработка использует ссылочные типы конфигурации (`CatalogRef.XXX`, `DocumentRef.XXX` и т.д.) — в реквизитах объекта, табличных частях или реквизитах форм — **сборка в пустой базе упадёт** с ошибкой XDTO. Платформа не может резолвить типы, отсутствующие в конфигурации базы.
-
-**Решение**: собирать в базе с целевой конфигурацией. Если конфигурация неизвестна — спросить пользователя путь к базе.
-
-## Пример полного цикла
+## Примеры
 
 ```powershell
-$env:V8_PATH = "C:\Program Files\1cv8\8.3.27.1936\bin"
-$env:V8_BASE = ".\base"
+# Сборка обработки (файловая база)
+powershell.exe -NoProfile -File .cursor/skills/epf-build/scripts/epf-build.ps1 -InfoBasePath "C:\Bases\MyDB" -SourceFile "src\МояОбработка.xml" -OutputFile "build\МояОбработка.epf"
 
-# Создать ИБ
-& "$env:V8_PATH\1cv8.exe" CREATEINFOBASE "File=$env:V8_BASE"
-
-# Собрать
-& "$env:V8_PATH\1cv8.exe" DESIGNER /F $env:V8_BASE /DisableStartupDialogs /LoadExternalDataProcessorOrReportFromFiles "src\МояОбработка.xml" "build\МояОбработка.epf" /Out "build\build.log"
+# Серверная база
+powershell.exe -NoProfile -File .cursor/skills/epf-build/scripts/epf-build.ps1 -InfoBaseServer "srv01" -InfoBaseRef "MyDB" -UserName "Admin" -Password "secret" -SourceFile "src\МояОбработка.xml" -OutputFile "build\МояОбработка.epf"
 ```
