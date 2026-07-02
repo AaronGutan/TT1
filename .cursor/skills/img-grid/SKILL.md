@@ -28,11 +28,11 @@ allowed-tools:
 
 ## Команда
 
-```bash
-python .cursor/skills/img-grid/scripts/overlay-grid.py "<ImagePath>" [-c 50] [-o "<OutputPath>"]
+```powershell
+powershell.exe -NoProfile -File .cursor/skills/img-grid/scripts/overlay-grid.ps1 -Image "<ImagePath>" [-Cols 50] [-Output "<OutputPath>"]
 ```
 
-Требуется Python 3 с библиотекой Pillow (`pip install Pillow`).
+Требуется Windows PowerShell 5.1+ (встроен в Windows). Дополнительных зависимостей нет — используется `System.Drawing` из .NET Framework.
 
 ## Что делает
 

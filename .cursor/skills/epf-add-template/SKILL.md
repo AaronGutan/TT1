@@ -32,7 +32,7 @@ allowed-tools:
 ## Команда
 
 ```powershell
-pwsh -NoProfile -File .cursor/rules/skills/epf-add-template/scripts/add-template.ps1 -ProcessorName "<ProcessorName>" -TemplateName "<TemplateName>" -TemplateType "<TemplateType>" [-Synonym "<Synonym>"] [-SrcDir "<SrcDir>"]
+powershell.exe -NoProfile -File .cursor/skills/epf-add-template/scripts/add-template.ps1 -ProcessorName "<ProcessorName>" -TemplateName "<TemplateName>" -TemplateType "<TemplateType>" [-Synonym "<Synonym>"] [-SrcDir "<SrcDir>"]
 ```
 
 ## Маппинг типов

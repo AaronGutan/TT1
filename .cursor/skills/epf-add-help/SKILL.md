@@ -30,7 +30,7 @@ allowed-tools:
 ## Команда
 
 ```powershell
-powershell.exe -NoProfile -File .cursor/rules/skills/epf-add-help/scripts/add-help.ps1 -ProcessorName "<ProcessorName>" [-Lang "<Lang>"] [-SrcDir "<SrcDir>"]
+powershell.exe -NoProfile -File .cursor/skills/epf-add-help/scripts/add-help.ps1 -ProcessorName "<ProcessorName>" [-Lang "<Lang>"] [-SrcDir "<SrcDir>"]
 ```
 
 ## Что создаётся

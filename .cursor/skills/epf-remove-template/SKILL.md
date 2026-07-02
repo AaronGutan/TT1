@@ -31,7 +31,7 @@ allowed-tools:
 ## Команда
 
 ```powershell
-pwsh -NoProfile -File .cursor/rules/skills/epf-remove-template/scripts/remove-template.ps1 -ProcessorName "<ProcessorName>" -TemplateName "<TemplateName>" [-SrcDir "<SrcDir>"]
+powershell.exe -NoProfile -File .cursor/skills/epf-remove-template/scripts/remove-template.ps1 -ProcessorName "<ProcessorName>" -TemplateName "<TemplateName>" [-SrcDir "<SrcDir>"]
 ```
 
 ## Что удаляется

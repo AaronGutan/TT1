@@ -31,7 +31,7 @@ allowed-tools:
 ## Команда
 
 ```powershell
-pwsh -NoProfile -File .cursor/rules/skills/epf-remove-form/scripts/remove-form.ps1 -ProcessorName "<ProcessorName>" -FormName "<FormName>" [-SrcDir "<SrcDir>"]
+powershell.exe -NoProfile -File .cursor/skills/epf-remove-form/scripts/remove-form.ps1 -ProcessorName "<ProcessorName>" -FormName "<FormName>" [-SrcDir "<SrcDir>"]
 ```
 
 ## Что удаляется
