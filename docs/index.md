@@ -4,7 +4,38 @@
 
 Файлы обновляются вручную — добавляйте готовые Markdown-документы в соответствующие подпапки.
 
-## Содержание
+---
+
+## Технические спецификации и гайды скилов
+
+Технические документы для системы скилов Cursor — спецификации XML-форматов, DSL и руководства.
+
+- [Сводный индекс XML-спецификаций](1c-specs-index.md) — единая точка входа ко всем спецификациям формата выгрузки 1С
+
+### Руководства по скилам
+
+| Файл | Описание |
+|------|----------|
+| [build-spec.md](build-spec.md) | Сборка EPF/ERF через командную строку |
+| [cf-guide.md](cf-guide.md) | Работа с конфигурацией (CF) |
+| [cfe-guide.md](cfe-guide.md) | Работа с расширениями (CFE) |
+| [db-guide.md](db-guide.md) | Управление базами данных |
+| [epf-guide.md](epf-guide.md) | Внешние обработки (EPF) |
+| [form-guide.md](form-guide.md) | Управляемые формы |
+| [form-patterns.md](form-patterns.md) | Паттерны компоновки форм |
+| [meta-guide.md](meta-guide.md) | Объекты метаданных |
+| [mxl-guide.md](mxl-guide.md) | Табличные документы (MXL) |
+| [role-guide.md](role-guide.md) | Роли и права |
+| [skd-guide.md](skd-guide.md) | Схемы компоновки данных (СКД) |
+| [subsystem-guide.md](subsystem-guide.md) | Подсистемы |
+| [web-guide.md](web-guide.md) | Веб-публикация |
+| [web-spec.md](web-spec.md) | Спецификация веб-сервисов |
+| [web-test-guide.md](web-test-guide.md) | Тестирование через браузер |
+| [python-porting-guide.md](python-porting-guide.md) | Портирование скриптов Python → PowerShell |
+
+---
+
+## Статьи базы знаний ITS
 
 ### admin
 
